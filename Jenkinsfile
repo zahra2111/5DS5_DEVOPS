@@ -4,7 +4,22 @@ pipeline {
     tools {
         maven 'Maven 3.9.9'
     }
+   environment {
+	    VERSION = "1.0.${BUILD_NUMBER}-SNAPSHOT"
 
+        SONAR_TOKEN = credentials('SONAR_TOKEN')
+
+        NEXUS_USERNAME = credentials('NEXUS_USERNAME')
+        NEXUS_PASSWORD = credentials('NEXUS_PASSWORD')
+
+        DOCKERHUB_USERNAME = credentials('DOCKERHUB_USERNAME')
+        DOCKERHUB_PASSWORD = credentials('DOCKERHUB_PASSWORD')
+        DOCKER_REPOSITORY_NAME = 'zahrahlioui_tpfoyer'
+        DOCKER_REPOSITORY_NAMESPACE = 'zahrahlioui'
+        DOCKER_REPOSITORY = "${DOCKER_REPOSITORY_NAMESPACE}/${DOCKER_REPOSITORY_NAME}:${VERSION}"
+
+        APP_IMAGE = "${DOCKER_REPOSITORY_NAME}:${VERSION}"
+    }
     stages {
         stage('Clean') {
             steps {
