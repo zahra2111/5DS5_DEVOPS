@@ -22,17 +22,16 @@
         	<sonar.login>${env.SONAR_TOKEN}</sonar.login>
 	        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <url>${repo.url}/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>${repo.url}/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+<distributionManagement>
+    <repository>
+        <id>nexus-snapshots</id>
+        <url>${repo.url}</url>
+    </repository>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>${repo.url}</url>
+    </snapshotRepository>
+</distributionManagement>
 
     <dependencies>
         <dependency>
