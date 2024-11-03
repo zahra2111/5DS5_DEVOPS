@@ -17,17 +17,16 @@
     <properties>
         <java.version>17</java.version>
     </properties>
-    	<distributionManagement>
-		<repository>
-			<id>nexus-releases</id>
-			<url>${repo.url}</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>${repo.url}</url>
-		</snapshotRepository>
-	</distributionManagement>
-
+      <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>${repo.url}/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>${repo.url}/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     <dependencies>
 
         <dependency>
