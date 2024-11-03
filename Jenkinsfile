@@ -73,7 +73,7 @@ pipeline {
         stage('Deploy-Nexus') {
             steps {
                 script {
-		    sh "mvn deploy -DskipTests -DskipCompile -DskipPackaging -s mvn-settings.xml -P snapshot"
+		    sh "mvn deploy -DskipTests -DskipCompile -s mvn-settings.xml -P snapshot"
                 }
             }
         }
