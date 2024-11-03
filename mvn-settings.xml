@@ -13,15 +13,6 @@
 			<repo.url>http://nexus:8081/repository/maven-releases</repo.url>
 		</properties>
 	</profile>
-	<profile>
-		<id>snapshot</id>
-		<activation>
-			<activeByDefault>false</activeByDefault>
-		</activation>
-		<properties>
-			<repo.url>http://nexus:8081/repository/maven-snapshots</repo.url>
-		</properties>
-	</profile>
   </profiles>
 
   <pluginGroups> </pluginGroups>
@@ -31,12 +22,6 @@
   <servers>
     <server>
       <id>nexus-snapshots</id>
-      <username>${env.NEXUS_USERNAME}</username>
-      <password>${env.NEXUS_PASSWORD}</password>
-    </server>
-
-    <server>
-      <id>nexus-releases</id>
       <username>${env.NEXUS_USERNAME}</username>
       <password>${env.NEXUS_PASSWORD}</password>
     </server>
