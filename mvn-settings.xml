@@ -10,7 +10,7 @@
 			<activeByDefault>false</activeByDefault>
 		</activation>
 		<properties>
-			<repo.url>http://nexus:8081/repository/maven-releases/</repo.url>
+			<repo.url>http://nexus:8081/repository/maven-releases</repo.url>
 		</properties>
 	</profile>
 	<profile>
@@ -19,7 +19,7 @@
 			<activeByDefault>false</activeByDefault>
 		</activation>
 		<properties>
-			<repo.url>http://nexus:8081/repository/maven-snapshots/</repo.url>
+			<repo.url>http://nexus:8081/repository/maven-snapshots</repo.url>
 		</properties>
 	</profile>
   </profiles>
