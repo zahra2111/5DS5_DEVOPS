@@ -8,9 +8,10 @@
         <version>3.3.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>tn.esprit</groupId>
-    <artifactId>tp-foyer</artifactId>
-    <version>5.0.0-SNAPSHOT</version> <!-- Use SNAPSHOT version for snapshot deployment -->
+   <groupId>tn.esprit</groupId>
+<artifactId>tp-foyer</artifactId>
+<version>1.0.29-SNAPSHOT</version>
+
     <name>tp-foyer</name>
     <description>tp-foyer</description>
    
