@@ -9,16 +9,18 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
    <groupId>tn.esprit.tpfoyer</groupId>
-<artifactId>tp-foyer</artifactId>
-<version>1.0.29-SNAPSHOT</version>
+        <artifactId>tp-foyer</artifactId>
+        <version>1.0.29-SNAPSHOT</version>
 
-    <name>tp-foyer</name>
-    <description>tp-foyer</description>
+         <name>tp-foyer</name>
+    <description>Demo project for Spring Boot </description>
    
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        	<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+	        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <distributionManagement>
@@ -60,10 +62,22 @@
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.1.0</version>
         </dependency>
+        	<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+        
+
     </dependencies>
 
     <build>
-        <plugins>
+       
+    </build>
+    
+	<build>
+		<finalName>tp_foyer</finalName>
+		<plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -76,6 +90,31 @@
                     </excludes>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
+			<plugin>
+			        <groupId>org.codehaus.mojo</groupId>
+		        	<artifactId>versions-maven-plugin</artifactId>
+			        <version>2.8.1</version> <!-- or latest -->
+		        </plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.10</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
